@@ -1,19 +1,3 @@
-import subprocess
-import sys
-
-# Function to install a package if not installed
-def install_package(package):
-    try:
-        __import__(package)
-    except ImportError:
-        print(f"{package} not found. Installing...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
-
-# Ensure required packages are installed
-install_package("streamlit")
-install_package("openai")
-install_package("langchain-openai")
-
 import streamlit as st
 from langchain_openai.chat_models import ChatOpenAI
 
