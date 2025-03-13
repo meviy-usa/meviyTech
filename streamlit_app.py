@@ -7,7 +7,7 @@ def install_package(package):
         __import__(package)
     except ImportError:
         print(f"{package} not found. Installing...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
 
 # Ensure required packages are installed
 install_package("streamlit")
